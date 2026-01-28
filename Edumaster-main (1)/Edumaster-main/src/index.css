@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Sophisticated Slate Theme - Soft gray backgrounds */
+    --background: 210 20% 96%;
+    --foreground: 215 25% 20%;
+    --card: 210 25% 98%;
+    --card-foreground: 215 25% 20%;
+    --popover: 210 25% 98%;
+    --popover-foreground: 215 25% 20%;
+
+    /* Unique Teal/Cyan Theme for modern calm vibe */
+    --primary: 185 75% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 18% 90%;
+    --secondary-foreground: 215 20% 25%;
+
+    --muted: 210 18% 88%;
+    --muted-foreground: 215 15% 48%;
+
+    --accent: 210 20% 85%;
+    --accent-foreground: 215 20% 25%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 15% 82%;
+    --input: 210 15% 85%;
+    --ring: 185 75% 45%;
+    --radius: 0.5rem;
+
+    --chart-1: 185 75% 45%;
+    --chart-2: 200 85% 50%;
+    --chart-3: 170 70% 48%;
+    --chart-4: 155 65% 50%;
+    --chart-5: 190 80% 52%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Dark Mode Purple/Blue Theme */
+    --primary: 263 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263 70% 65%;
+
+    --chart-1: 263 70% 65%;
+    --chart-2: 220 70% 50%;
+    --chart-3: 280 65% 60%;
+    --chart-4: 200 80% 55%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(220, 70%, 50%) 100%);
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, hsl(280, 65%, 60%) 0%, hsl(262, 83%, 58%) 100%);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(220, 70%, 50%) 100%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:scale-[1.02];
+  }
+
+  .glass-effect {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-white/20;
+  }
+}
